@@ -14,7 +14,7 @@ def tokenize(text):
     text = regtok.tokenize(text)
     text = " ".join(text)
     tokens = word_tokenize(text)
-    tokens = [token for token in tokens if token not in stop_words and not token.isnumeric()]
+    tokens = [token for token in tokens if token not in stop_words and not token.isnumeric() and len(token.split()) > 1]
     if len(tokens) == 0:
         tokens = [' ']
     return tokens
